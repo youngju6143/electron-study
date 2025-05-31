@@ -26,13 +26,13 @@ function App(): React.JSX.Element {
   }
 
   // 드래그 시작
-  const handleMouseDown = () => {
+  const handleMouseDown = (): void => {
     isResizing.current = true
     document.body.style.cursor = 'col-resize'
   }
 
   // 드래그 중
-  const handleMouseMove = (e: MouseEvent) => {
+  const handleMouseMove = (e: MouseEvent): void => {
     if (isResizing.current) {
       const newWidth = Math.max(200, e.clientX) // 최소 120px
       setMemoListWidth(newWidth)
@@ -40,7 +40,7 @@ function App(): React.JSX.Element {
   }
 
   // 드래그 끝
-  const handleMouseUp = () => {
+  const handleMouseUp = (): void => {
     isResizing.current = false
     document.body.style.cursor = ''
   }
